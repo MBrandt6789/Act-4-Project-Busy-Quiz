@@ -1,10 +1,12 @@
+//basic framework of the script
+
 const quizData = [
     {
         question: "Which language runs in a web browser?",
         a: "A. Java",
         b: "B. C",
         c: "C. Python",
-        d: "D. javascript",
+        d: "D. JavaScript",
         correct: "d",
     },
     {
@@ -35,6 +37,8 @@ const quizData = [
 
 ];
 
+//Helps set up the input
+
 const quiz= document.getElementById('quiz')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
@@ -49,6 +53,8 @@ let currentQuiz = 0
 let score = 0
 
 loadQuiz()
+
+//sets scores
 
 function loadQuiz() {
 
@@ -77,6 +83,7 @@ function getSelected() {
     return answer
 }
 
+//clickable
 
 submitBtn.addEventListener('click', () => {
     const answer = getSelected()
@@ -99,6 +106,8 @@ submitBtn.addEventListener('click', () => {
        }
     }
 })
+
+//Timer
 
 const startingMinutes = 1;
 let time = startingMinutes * 60;
